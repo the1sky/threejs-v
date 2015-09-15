@@ -17,14 +17,9 @@ angular.module('starter', ['ionic','starter.controllers'])
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
     }
-    if (window.StatusBar) {
-      // Set the statusbar to use the default style, tweak this to
-      // remove the status bar on iOS or change it to use white instead of dark colors.
-      StatusBar.styleDefault();
-    }
   });
 })
-  .config(function($ionicAppProvider, $stateProvider, $urlRouterProvider, $ionicConfigProvider){
+  .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider){
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router
     // Set up the various states which the app can be in.

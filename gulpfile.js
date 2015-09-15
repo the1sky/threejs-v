@@ -8,6 +8,7 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var paths = {
+  swww:['./swww/js/*.js','./swww/templates/*.html','./swww/index.html'],
   sass: ['./scss/**/*.scss']
 };
 
@@ -17,16 +18,15 @@ gulp.task('default', ['sass','swww-copy']);
  * 编译sass
  */
 gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
+  gulp.src('./scss/*.scss')
     .pipe(sass({
       errLogToConsole: true
     }))
-    .pipe(gulp.dest('./www/css/'))
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
-    .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
+    .pipe(concat('vjiaju.all.css'))
+    .pipe(gulp.dest('./swww/css/'))
     .on('end', done);
 });
 
@@ -39,7 +39,8 @@ gulp.task('swww-copy',function(done){
 })
 
 gulp.task('watch', function() {
-  gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.swww, ['default']);
+  gulp.watch(paths.sass, ['default']);
 });
 
 gulp.task('install', ['git-check'], function() {
