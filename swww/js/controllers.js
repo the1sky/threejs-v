@@ -1,9 +1,16 @@
 angular.module('starter.controllers', [])
-  .controller('TestCtrl', function ($scope) {
-    $scope.canvasWidth = 400;
-    $scope.canvasHeight = 400;
-    $scope.dofillcontainer = true;
-    $scope.scale = 1;
-    $scope.materialType = 'lambert';
-  }
-)
+  .controller('NavController', function ($scope, $ionicSideMenuDelegate) {
+  })
+  .controller('FrameworkCtrl', function ($scope, $ionicSideMenuDelegate) {
+    console.log(1)
+  })
+  .controller('SndHomePageController', function ($scope, $ionicSideMenuDelegate) {
+  })
+  .controller('SndChatPageController', function ($scope, $ionicSideMenuDelegate) {
+  })
+  .controller('SndChatSinglePageController', function ($scope, $ionicSideMenuDelegate) {
+  })
+  .controller('SndDrinkPageController', function ($scope, $ionicSideMenuDelegate) {
+  })
+  .controller('SndPolicyPageController', function ($scope, $ionicSideMenuDelegate) {
+  })
